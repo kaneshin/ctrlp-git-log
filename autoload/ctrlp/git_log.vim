@@ -8,7 +8,7 @@ let s:git_log_var = {
   \ 'accept': 'ctrlp#git_log#accept',
   \ 'lname':  'git-log',
   \ 'sname':  'git-log',
-  \ 'type':   'git-log',
+  \ 'type':   'line',
   \ 'enter':  'ctrlp#git_log#enter()',
   \ 'exit':   'ctrlp#git_log#exit()',
   \ 'sort':   0,
