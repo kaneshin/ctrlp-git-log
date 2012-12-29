@@ -21,7 +21,7 @@ else
 endif
 
 function! ctrlp#git_log#init()
-  let s:log = split(system('git log --oneline --pretty=format:"%h | %cr, %an - %s"'), "\n")
+  let s:log = split(system('git log --oneline -50 --pretty=format:"%h | %cr, %an - %s"'), "\n")
   return s:log
 endfunc
 
