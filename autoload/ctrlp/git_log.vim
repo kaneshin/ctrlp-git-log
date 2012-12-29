@@ -28,7 +28,7 @@ endfunc
 function! ctrlp#git_log#accept(mode, str)
   call ctrlp#exit()
   let hash = substitute(a:str, "^\\(.\\+\\)\\s|.*$", "\\1", "")
-  echo system('git log '.hash.'~..'.hash)
+  echo system('git log '.hash.'~..'.hash.' --stat -p')
 endfunction
 
 " Do something before enterting ctrlp
