@@ -21,18 +21,18 @@ else
 endif
 
 function! ctrlp#git_log#init()
-  let s:log = split(system('git log --oneline -50 --pretty=format:"%h | %cr, %an - %s"'), "\n")
   return s:log
 endfunc
 
 function! ctrlp#git_log#accept(mode, str)
   call ctrlp#exit()
   let hash = substitute(a:str, "^\\(.\\+\\)\\s|.*$", "\\1", "")
-  echo system('git log '.hash.'~..'.hash.' --stat -p')
+  echo system('git show '.hash)
 endfunction
 
 " Do something before enterting ctrlp
 function! ctrlp#git_log#enter()
+  let s:log = split(system('git log --oneline -100 --pretty=format:"%h | %cr, %an - %s"'), "\n")
 endfunction
 
 " Do something after exiting ctrlp
